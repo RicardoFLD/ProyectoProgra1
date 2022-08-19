@@ -215,8 +215,6 @@ public class Administrator extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         btnAdd = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        btnDelete = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
         txtTitle = new javax.swing.JTextField();
         txtAutor = new javax.swing.JTextField();
         txtYear = new javax.swing.JTextField();
@@ -440,36 +438,6 @@ public class Administrator extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        btnDelete.setBackground(new java.awt.Color(204, 204, 204));
-        btnDelete.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnDeleteMouseClicked(evt);
-            }
-        });
-
-        jLabel11.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel11.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Eliminar");
-
-        javax.swing.GroupLayout btnDeleteLayout = new javax.swing.GroupLayout(btnDelete);
-        btnDelete.setLayout(btnDeleteLayout);
-        btnDeleteLayout.setHorizontalGroup(
-            btnDeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnDeleteLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        btnDeleteLayout.setVerticalGroup(
-            btnDeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnDeleteLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
         txtTitle.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtTitle.setText(". . .");
 
@@ -515,7 +483,6 @@ public class Administrator extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtAutor)
                     .addComponent(txtGenre)
                     .addComponent(txtTopic, 0, 191, Short.MAX_VALUE))
@@ -566,9 +533,7 @@ public class Administrator extends javax.swing.JFrame {
                     .addComponent(txtTopic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(84, 84, 84)
                 .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(167, 167, 167))
+                .addGap(236, 236, 236))
         );
 
         jTabbedPane1.addTab("tab3", jPanel8);
@@ -672,39 +637,6 @@ public class Administrator extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Libro agregado");
         }
     }//GEN-LAST:event_btnAddMouseClicked
-
-    private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
-        String titulo= txtTitle.getText();
-                String autor= txtAutor.getText();
-                String genero= txtGenre.getText();
-                String isbn= txtISBN.getText();
-                String anno= txtYear.getText();
-                String edicion= txtEdition.getText();
-                String portada= txtCover.getText();
-                String tema= (String) txtTopic.getSelectedItem();
-                String Sinopsis= txtSinopsis.getText();
-                
-                ArrayList <String> deleted= new ArrayList<>();
-                deleted.add(titulo);
-                deleted.add(autor);
-                deleted.add(genero);
-                deleted.add(isbn);
-                deleted.add(anno);
-                deleted.add(edicion);
-                deleted.add(portada);
-                deleted.add(tema);
-                deleted.add(Sinopsis);
-                
-                for (String i : deleted) {
-                    for (Bookinfo a : SavedBooks.books) {
-                        if (titulo.equals(a.getTitle())) {
-                            SavedBooks.books.remove(a);
-                            loadData();
-                            JOptionPane.showMessageDialog(null, "Libro eliminado");
-                        }
-                    }
-                }
-    }//GEN-LAST:event_btnDeleteMouseClicked
 
     private void btnReporteInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReporteInMouseClicked
         Date fecha = new Date();
@@ -828,12 +760,10 @@ public class Administrator extends javax.swing.JFrame {
     private javax.swing.JMenu LogOutMenu;
     private javax.swing.JTable ReservedTab;
     private javax.swing.JPanel btnAdd;
-    private javax.swing.JPanel btnDelete;
     private javax.swing.JPanel btnReporteIn;
     private javax.swing.JPanel btnReporteRe;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;

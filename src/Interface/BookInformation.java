@@ -51,7 +51,7 @@ public class BookInformation extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Cover.setText("p");
-        jPanel1.add(Cover, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 210, 270));
+        jPanel1.add(Cover, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 210, 230));
 
         jLabel2.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -61,7 +61,7 @@ public class BookInformation extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Corbel Light", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Sinopsis aquí");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 340, 200));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 330, 200));
 
         btnReserveBook.setBackground(new java.awt.Color(102, 153, 255));
         btnReserveBook.addMouseListener(new java.awt.event.MouseAdapter() {
