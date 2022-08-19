@@ -1,8 +1,6 @@
 
 package Books;
 
-import java.util.ArrayList;
-
 
 public class Bookinfo {
 
@@ -42,8 +40,8 @@ public class Bookinfo {
         return cover;
     }
     
-    public String getStatus(){
-        return Status;
+    public String getSinopsis(){
+        return Sinopsis;
     }
 
     public void setTitle(String title) {
@@ -82,8 +80,8 @@ public class Bookinfo {
         this.cover = cover;
     }
     
-    public void setStatus(String status){
-        this.Status=status;
+    public void setSinopsis(String sinopsis){
+        this.Sinopsis=sinopsis;
     }
     
     static String title;
@@ -95,7 +93,7 @@ public class Bookinfo {
     static String edition;
     static String languaje;
     static String cover;
-    static String Status;
+    static String Sinopsis;
     
     
     

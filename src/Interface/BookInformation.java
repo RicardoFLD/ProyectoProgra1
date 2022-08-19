@@ -1,12 +1,20 @@
 //BOOK INFORMATION
 package Interface;
 
+import Books.Bookinfo;
+import Books.SavedBooks;
+import static Books.SavedBooks.books;
+import static Interface.Administrator.loadData;
+import java.util.TreeMap;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jesus
  */
 public class BookInformation extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form BookInformation
      */
@@ -15,7 +23,9 @@ public class BookInformation extends javax.swing.JFrame {
         this.setSize(600, 400);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,22 +37,18 @@ public class BookInformation extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         Cover = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btnReserveBook = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        Jauthor = new javax.swing.JTextField();
+        JTitlespot = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Titulo");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 190, 20));
 
         Cover.setText("p");
         jPanel1.add(Cover, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 210, 270));
@@ -87,6 +93,17 @@ public class BookInformation extends javax.swing.JFrame {
 
         jPanel1.add(btnReserveBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 110, 30));
 
+        Jauthor.setBackground(new java.awt.Color(255, 255, 255));
+        Jauthor.setFont(new java.awt.Font("Corbel Light", 0, 12)); // NOI18N
+        Jauthor.setForeground(new java.awt.Color(102, 102, 102));
+        Jauthor.setBorder(null);
+        jPanel1.add(Jauthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 220, -1));
+
+        JTitlespot.setBackground(new java.awt.Color(255, 255, 255));
+        JTitlespot.setFont(new java.awt.Font("Corbel Light", 1, 18)); // NOI18N
+        JTitlespot.setBorder(null);
+        jPanel1.add(JTitlespot, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 220, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -102,8 +119,40 @@ public class BookInformation extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnReserveBookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReserveBookMouseClicked
-        VerifyReserve open=new VerifyReserve();
-        open.setVisible(true);
+        TreeMap<String,String> reservados= new TreeMap<>();
+        String book=JTitlespot.getText();
+        String author=Jauthor.getText();
+        reservados.put(book, author);
+        for (Bookinfo a : books) {
+            if (a.getTitle().equals(reservados.get(book)) && a.getAuthor().equals(reservados.values())) {
+                try {
+                    String titulo=a.getTitle();
+                    String autor=a.getAuthor();
+                    String genero=a.getGenre();
+                    String isbn=a.getISBN();
+                    String anno=a.getYear();
+                    String edicion=a.getEdition();
+                    String tema=a.getTopic();
+                    String portada=a.getCover();
+                    
+                    
+                    Bookinfo add=new Bookinfo();
+                    add.setTitle(titulo);
+                    add.setAuthor(autor);
+                    add.setGenre(genero);
+                    add.setISBN(isbn);
+                    add.setYear(anno);
+                    add.setEdition(edicion);
+                    add.setCover(portada);
+                    add.setTopic(tema);
+                    
+                    SavedBooks.reserved.add(add);
+                    loadData();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "El libro se ha reservado durante dos semanas");
+                }
+            }
+        }
     }//GEN-LAST:event_btnReserveBookMouseClicked
 
     /**
@@ -143,8 +192,9 @@ public class BookInformation extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cover;
+    private javax.swing.JTextField JTitlespot;
+    private javax.swing.JTextField Jauthor;
     private javax.swing.JPanel btnReserveBook;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;

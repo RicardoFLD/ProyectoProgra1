@@ -1,9 +1,12 @@
 //INTERFACE / INITIAL PAGE / LIBRARY
 package Interface;
 
+import LogIn.IniciarUsuario;
 import LogIn.Login;
-import java.awt.Image;
-import javax.swing.ImageIcon;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  *
@@ -11,24 +14,22 @@ import javax.swing.ImageIcon;
  */
 public class Interface extends javax.swing.JFrame {
 
+    
+    
     /**
      * Creates new form Interface
      */
     public Interface() {
         initComponents();
-        this.setSize(1200, 800);
+        this.setSize(1200, 600);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        scaleImage();
-    }
-    
-    
-    public void scaleImage(){
-        ImageIcon icon= new ImageIcon("C:\\Users\\jesus\\Documents\\NetBeansProjects\\Proyecto\\src\\Images\\Book-icon-bible.png");
-        Image img= icon.getImage();
-        Image imgScale=img.getScaledInstance(IconLabel.getWidth(),IconLabel.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon scaledIcon= new ImageIcon(imgScale);
-        IconLabel.setIcon(scaledIcon);
+        
+        /*if (IniciarUsuario.rolUsuario.equals("Administrador")) {
+            AdministratorMenu.setVisible(true);
+        }else{
+            AdministratorMenu.setVisible(false);
+        }*/
     }
 
     /**
@@ -73,7 +74,6 @@ public class Interface extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
-        IconLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         OptionMenu = new javax.swing.JMenu();
         AboutMenu = new javax.swing.JMenu();
@@ -245,7 +245,12 @@ public class Interface extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
         btnFiction.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
-        btnFiction.setText("Ficción");
+        btnFiction.setText("Ficción y Fantasía");
+        btnFiction.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFictionActionPerformed(evt);
+            }
+        });
 
         btnMistery.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         btnMistery.setText("Misterio");
@@ -437,11 +442,10 @@ public class Interface extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LibraryTabs, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+            .addComponent(LibraryTabs)
         );
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1200, 530));
-        jPanel1.add(IconLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 540, 190, 180));
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuBar1.setBorder(null);
@@ -551,10 +555,19 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_AboutMenuMouseClicked
 
     private void GoToInventoryMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GoToInventoryMenuMouseClicked
-        Inventory manage=new Inventory();
+        Administrator manage = null;
+        try {
+            manage = new Administrator();
+        } catch (IOException ex) {
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+        }
         manage.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_GoToInventoryMenuMouseClicked
+
+    private void btnFictionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFictionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFictionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -597,7 +610,6 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JMenu ChangeProfileMenu;
     private javax.swing.JMenu ExitMenu;
     private javax.swing.JMenu GoToInventoryMenu;
-    private javax.swing.JLabel IconLabel;
     private javax.swing.JTabbedPane LibraryTabs;
     private javax.swing.JMenu LogOutMenu;
     private javax.swing.JMenu OptionMenu;
