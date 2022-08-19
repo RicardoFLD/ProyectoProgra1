@@ -4,6 +4,7 @@ package LogIn;
 import Interface.Interface;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author jesus
@@ -12,12 +13,14 @@ public class Login extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
-     */
+     */  
     public Login() {
         initComponents();
         this.setSize(600, 450);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        
+        
     }
 
     /**
@@ -64,7 +67,6 @@ public class Login extends javax.swing.JFrame {
 
         txtUserEntry.setFont(new java.awt.Font("Corbel Light", 0, 14)); // NOI18N
         txtUserEntry.setForeground(new java.awt.Color(0, 0, 102));
-        txtUserEntry.setText("Ingrese su usuario o correo electronico");
         txtUserEntry.setBorder(null);
         txtUserEntry.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

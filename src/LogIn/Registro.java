@@ -1,6 +1,8 @@
 //REGISTRY
 package LogIn;
 
+
+
 import javax.swing.JOptionPane;
 
 /**
@@ -12,12 +14,18 @@ public class Registro extends javax.swing.JFrame {
     /**
      * Creates new form Registro
      */
+    
+    
     public Registro() {
         initComponents();
         this.setSize(600, 450);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        
+        
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -90,11 +98,6 @@ public class Registro extends javax.swing.JFrame {
         txtNombre.setForeground(new java.awt.Color(0, 0, 102));
         txtNombre.setText("Ingrese su nombre");
         txtNombre.setBorder(null);
-        txtNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreActionPerformed(evt);
-            }
-        });
         jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 130, -1));
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
@@ -105,11 +108,6 @@ public class Registro extends javax.swing.JFrame {
         txtCorreo.setForeground(new java.awt.Color(0, 0, 102));
         txtCorreo.setText("Ingrese su correo electrónico");
         txtCorreo.setBorder(null);
-        txtCorreo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCorreoActionPerformed(evt);
-            }
-        });
         jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 330, -1));
 
         jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
@@ -130,11 +128,6 @@ public class Registro extends javax.swing.JFrame {
         txtApellidos.setForeground(new java.awt.Color(0, 0, 102));
         txtApellidos.setText("Ingrese su apellido");
         txtApellidos.setBorder(null);
-        txtApellidos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApellidosActionPerformed(evt);
-            }
-        });
         jPanel1.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 130, -1));
 
         jSeparator7.setBackground(new java.awt.Color(0, 0, 0));
@@ -261,18 +254,6 @@ public class Registro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
-    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreActionPerformed
-
-    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCorreoActionPerformed
-
-    private void txtApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtApellidosActionPerformed
-
     private void btnCrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearMouseClicked
         String nombre = txtNombre.getText();
         String apellido = txtApellidos.getText();
@@ -303,6 +284,10 @@ public class Registro extends javax.swing.JFrame {
         IniciarUsuario.Userlist.add(user);
         
         JOptionPane.showMessageDialog(this, "Usuario Creado");
+        
+        EnviarCorreo e = new EnviarCorreo();
+        e.enviarMensaje(txtCorreo.getText());
+        
         Login v = new Login();
         v.setVisible(true);
         this.dispose();
