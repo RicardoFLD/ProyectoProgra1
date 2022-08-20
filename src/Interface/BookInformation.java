@@ -18,12 +18,19 @@ public class BookInformation extends javax.swing.JFrame {
     /**
      * Creates new form BookInformation
      */
+    
+    timer t;
+    
     public BookInformation() {
         initComponents();
         this.setSize(600, 400);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        
+        t= new timer(5,0,TimeLabel);
+        t.start();
+        if (TimeLabel.equals("0:0")) {
+            this.dispose();
+        }
     }
     
 
@@ -44,6 +51,7 @@ public class BookInformation extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         Jauthor = new javax.swing.JTextField();
         JTitlespot = new javax.swing.JTextField();
+        TimeLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +112,10 @@ public class BookInformation extends javax.swing.JFrame {
         JTitlespot.setBorder(null);
         jPanel1.add(JTitlespot, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 220, -1));
 
+        TimeLabel.setForeground(new java.awt.Color(204, 204, 204));
+        TimeLabel.setText("MM:SS");
+        jPanel1.add(TimeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,6 +131,7 @@ public class BookInformation extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnReserveBookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReserveBookMouseClicked
+        
         TreeMap<String,String> reservados= new TreeMap<>();
         String book=JTitlespot.getText();
         String author=Jauthor.getText();
@@ -148,6 +161,8 @@ public class BookInformation extends javax.swing.JFrame {
                     
                     SavedBooks.reserved.add(add);
                     loadData();
+                    Thread hilo=new Thread("ReservedTime");
+                    hilo.start();
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "El libro se ha reservado durante dos semanas");
                 }
@@ -194,6 +209,7 @@ public class BookInformation extends javax.swing.JFrame {
     private javax.swing.JLabel Cover;
     private javax.swing.JTextField JTitlespot;
     private javax.swing.JTextField Jauthor;
+    private javax.swing.JLabel TimeLabel;
     private javax.swing.JPanel btnReserveBook;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
