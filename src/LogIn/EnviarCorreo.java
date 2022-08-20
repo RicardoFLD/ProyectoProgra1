@@ -19,7 +19,7 @@ public class EnviarCorreo {
     static final String SMTP_USERNAME = "ricardo.fallas.l@gmail.com";
     
     //aqui va el codigo con la verificacion de 2 pasos
-    static final String SMTP_PASSWORD = "lnueeivozogdlimh";
+    static final String SMTP_PASSWORD = "vdxkcrexfynnvppy";
     
     static final String CONFISET = "Configset";
     
@@ -27,6 +27,10 @@ public class EnviarCorreo {
     static final int PORT = 587;
     
     public void enviarMensaje(String Destinatario, String Asunto, String Cuerpo) throws MessagingException, UnsupportedEncodingException{
+        
+                
+        Asunto = "Registro completado";
+        Cuerpo = "Se ha registrado correctamente";
         
         Properties props = System.getProperties();
         props.put("mail.transport.protocol" , "smtp");
