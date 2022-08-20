@@ -31,7 +31,6 @@ public class EnviarCorreo {
                 
         Asunto = "Registro completado";
         Cuerpo = "Se ha registrado correctamente";
-        
         Properties props = System.getProperties();
         props.put("mail.transport.protocol" , "smtp");
         props.put("mail.smtp.port" , PORT);

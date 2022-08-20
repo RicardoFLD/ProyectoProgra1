@@ -3,6 +3,10 @@ package LogIn;
 
 
 
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.MessagingException;
 import javax.swing.JOptionPane;
 
 /**
@@ -285,7 +289,10 @@ public class Registro extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(this, "Usuario Creado");
         
+        
         EnviarCorreo e = new EnviarCorreo();
+
+        
         e.enviarMensaje(txtCorreo.getText());
         
         Login v = new Login();
