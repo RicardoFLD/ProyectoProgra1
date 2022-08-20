@@ -286,18 +286,18 @@ public class Registro extends javax.swing.JFrame {
         user.setRol(rol);
         
         IniciarUsuario.Userlist.add(user);
+       
         
         JOptionPane.showMessageDialog(this, "Usuario Creado");
-        
-        
-        EnviarCorreo e = new EnviarCorreo();
-
-        
-        e.enviarMensaje(txtCorreo.getText());
-        
         Login v = new Login();
         v.setVisible(true);
         this.dispose();
+        
+        
+        EnviarCorreo e = new EnviarCorreo();        
+        e.enviarMensaje(txtCorreo.getText());
+        
+
             
             
     }//GEN-LAST:event_btnCrearMouseClicked
