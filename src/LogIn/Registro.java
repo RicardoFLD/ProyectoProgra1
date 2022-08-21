@@ -296,7 +296,6 @@ public class Registro extends javax.swing.JFrame {
         EnviarCorreo e = new EnviarCorreo();
 
         try {
-            
             e.enviarMensaje(correo, asunto, cuerpo);
         } catch (MessagingException | UnsupportedEncodingException ex) {
             Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
