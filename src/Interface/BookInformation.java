@@ -44,32 +44,24 @@ public class BookInformation extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        Cover = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         btnReserveBook = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         Jauthor = new javax.swing.JTextField();
         JTitlespot = new javax.swing.JTextField();
         TimeLabel = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Cover.setText("p");
-        jPanel1.add(Cover, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 210, 230));
-
         jLabel2.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Sinopsis:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Corbel Light", 0, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Sinopsis aquí");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 330, 200));
 
         btnReserveBook.setBackground(new java.awt.Color(102, 153, 255));
         btnReserveBook.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -104,17 +96,36 @@ public class BookInformation extends javax.swing.JFrame {
         Jauthor.setBackground(new java.awt.Color(255, 255, 255));
         Jauthor.setFont(new java.awt.Font("Corbel Light", 0, 12)); // NOI18N
         Jauthor.setForeground(new java.awt.Color(102, 102, 102));
+        Jauthor.setText("Autor");
         Jauthor.setBorder(null);
-        jPanel1.add(Jauthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 220, -1));
+        Jauthor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JauthorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Jauthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 150, 20));
 
         JTitlespot.setBackground(new java.awt.Color(255, 255, 255));
         JTitlespot.setFont(new java.awt.Font("Corbel Light", 1, 18)); // NOI18N
+        JTitlespot.setForeground(new java.awt.Color(51, 51, 51));
+        JTitlespot.setText("El nombre del Viento");
         JTitlespot.setBorder(null);
-        jPanel1.add(JTitlespot, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 220, -1));
+        JTitlespot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTitlespotActionPerformed(evt);
+            }
+        });
+        jPanel1.add(JTitlespot, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 180, -1));
 
         TimeLabel.setForeground(new java.awt.Color(204, 204, 204));
         TimeLabel.setText("MM:SS");
         jPanel1.add(TimeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
+
+        jTextPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextPane1.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane2.setViewportView(jTextPane1);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 310, 190));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,6 +181,14 @@ public class BookInformation extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnReserveBookMouseClicked
 
+    private void JTitlespotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTitlespotActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTitlespotActionPerformed
+
+    private void JauthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JauthorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JauthorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -206,14 +225,14 @@ public class BookInformation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Cover;
     private javax.swing.JTextField JTitlespot;
     private javax.swing.JTextField Jauthor;
     private javax.swing.JLabel TimeLabel;
     private javax.swing.JPanel btnReserveBook;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

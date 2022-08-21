@@ -39,11 +39,14 @@ public class BookInformation8 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        btnReserveBook = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        Jauthor = new javax.swing.JTextField();
         JTitlespot = new javax.swing.JTextField();
+        TimeLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        libro8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,36 +58,73 @@ public class BookInformation8 extends javax.swing.JFrame {
         jLabel2.setText("Sinopsis:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, -1));
 
+        btnReserveBook.setBackground(new java.awt.Color(102, 153, 255));
+        btnReserveBook.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnReserveBookMouseClicked(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Corbel Light", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Reservar");
+
+        javax.swing.GroupLayout btnReserveBookLayout = new javax.swing.GroupLayout(btnReserveBook);
+        btnReserveBook.setLayout(btnReserveBookLayout);
+        btnReserveBookLayout.setHorizontalGroup(
+            btnReserveBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnReserveBookLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        btnReserveBookLayout.setVerticalGroup(
+            btnReserveBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnReserveBookLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(btnReserveBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 110, 30));
+
+        Jauthor.setBackground(new java.awt.Color(255, 255, 255));
+        Jauthor.setFont(new java.awt.Font("Corbel Light", 0, 12)); // NOI18N
+        Jauthor.setForeground(new java.awt.Color(102, 102, 102));
+        Jauthor.setText("Amalia Andrade Arango");
+        Jauthor.setBorder(null);
+        Jauthor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JauthorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Jauthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 150, 20));
+
         JTitlespot.setBackground(new java.awt.Color(255, 255, 255));
         JTitlespot.setFont(new java.awt.Font("Corbel Light", 1, 18)); // NOI18N
-        JTitlespot.setForeground(new java.awt.Color(0, 0, 0));
-        JTitlespot.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        JTitlespot.setText("Uno siempre cambia al amor de su vida:");
+        JTitlespot.setForeground(new java.awt.Color(51, 51, 51));
+        JTitlespot.setText("Uno siempre cambia el amor de su vida");
         JTitlespot.setBorder(null);
-        jPanel1.add(JTitlespot, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 330, -1));
+        JTitlespot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTitlespotActionPerformed(evt);
+            }
+        });
+        jPanel1.add(JTitlespot, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 310, -1));
 
+        TimeLabel.setForeground(new java.awt.Color(204, 204, 204));
+        TimeLabel.setText("MM:SS");
+        jPanel1.add(TimeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
+
+        jTextPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextPane1.setForeground(new java.awt.Color(0, 0, 0));
         jTextPane1.setText("Este manual para sobrevivir a un corazón roto es una guía llena de amor, ternura, honestidad y verdadera sabiduría emocional para superar cualquier ruptura y, sobre todo, para asumir que está bien estar mal");
         jScrollPane1.setViewportView(jTextPane1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 480, 140));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 300, 190));
 
-        jButton3.setBackground(new java.awt.Color(0, 102, 255));
-        jButton3.setText("Reserva");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, -1, -1));
-
-        jButton4.setBackground(new java.awt.Color(0, 102, 255));
-        jButton4.setText("Volver");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, -1, -1));
+        libro8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(libro8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 190, 190));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,19 +140,52 @@ public class BookInformation8 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Interface inicio=new Interface();
-        inicio.setVisible(true);
-        this.dispose();
+    private void btnReserveBookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReserveBookMouseClicked
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+        TreeMap<String,String> reservados= new TreeMap<>();
+        String book=JTitlespot.getText();
+        String author=Jauthor.getText();
+        reservados.put(book, author);
+        for (Bookinfo a : books) {
+            if (a.getTitle().equals(reservados.get(book)) && a.getAuthor().equals(reservados.values())) {
+                try {
+                    String titulo=a.getTitle();
+                    String autor=a.getAuthor();
+                    String genero=a.getGenre();
+                    String isbn=a.getISBN();
+                    String anno=a.getYear();
+                    String edicion=a.getEdition();
+                    String tema=a.getTopic();
+                    String portada=a.getCover();
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        Interface inicio=new Interface();
-        inicio.setVisible(true);
-        this.dispose();
+                    Bookinfo add=new Bookinfo();
+                    add.setTitle(titulo);
+                    add.setAuthor(autor);
+                    add.setGenre(genero);
+                    add.setISBN(isbn);
+                    add.setYear(anno);
+                    add.setEdition(edicion);
+                    add.setCover(portada);
+                    add.setTopic(tema);
 
-    }//GEN-LAST:event_jButton4ActionPerformed
+                    SavedBooks.reserved.add(add);
+                    loadData();
+                    Thread hilo=new Thread("ReservedTime");
+                    hilo.start();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "El libro se ha reservado durante dos semanas");
+                }
+            }
+        }
+    }//GEN-LAST:event_btnReserveBookMouseClicked
+
+    private void JauthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JauthorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JauthorActionPerformed
+
+    private void JTitlespotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTitlespotActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTitlespotActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,11 +227,14 @@ public class BookInformation8 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JTitlespot;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JTextField Jauthor;
+    private javax.swing.JLabel TimeLabel;
+    private javax.swing.JPanel btnReserveBook;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JLabel libro8;
     // End of variables declaration//GEN-END:variables
 }

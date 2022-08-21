@@ -39,10 +39,12 @@ public class BookInformation1 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        btnReserveBook = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         Jauthor = new javax.swing.JTextField();
         JTitlespot = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        TimeLabel = new javax.swing.JLabel();
+        libro1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
 
@@ -54,62 +56,136 @@ public class BookInformation1 extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Sinopsis:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, -1));
+
+        btnReserveBook.setBackground(new java.awt.Color(102, 153, 255));
+        btnReserveBook.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnReserveBookMouseClicked(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Corbel Light", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Reservar");
+
+        javax.swing.GroupLayout btnReserveBookLayout = new javax.swing.GroupLayout(btnReserveBook);
+        btnReserveBook.setLayout(btnReserveBookLayout);
+        btnReserveBookLayout.setHorizontalGroup(
+            btnReserveBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnReserveBookLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        btnReserveBookLayout.setVerticalGroup(
+            btnReserveBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnReserveBookLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(btnReserveBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 110, 30));
 
         Jauthor.setBackground(new java.awt.Color(255, 255, 255));
         Jauthor.setFont(new java.awt.Font("Corbel Light", 0, 12)); // NOI18N
         Jauthor.setForeground(new java.awt.Color(102, 102, 102));
+        Jauthor.setText("Patrick Rothfuss");
         Jauthor.setBorder(null);
-        jPanel1.add(Jauthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 220, -1));
+        Jauthor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JauthorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Jauthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 150, 20));
 
         JTitlespot.setBackground(new java.awt.Color(255, 255, 255));
         JTitlespot.setFont(new java.awt.Font("Corbel Light", 1, 18)); // NOI18N
-        JTitlespot.setForeground(new java.awt.Color(0, 0, 0));
-        JTitlespot.setText("El nombre del viento ");
+        JTitlespot.setForeground(new java.awt.Color(51, 51, 51));
+        JTitlespot.setText("El nombre del Viento");
         JTitlespot.setBorder(null);
-        jPanel1.add(JTitlespot, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 220, -1));
-
-        jButton1.setBackground(new java.awt.Color(0, 102, 255));
-        jButton1.setText("Reservar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, -1, -1));
-
-        jButton3.setBackground(new java.awt.Color(0, 102, 255));
-        jButton3.setText("Volver");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        JTitlespot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                JTitlespotActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, -1, -1));
+        jPanel1.add(JTitlespot, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 180, -1));
+
+        TimeLabel.setForeground(new java.awt.Color(204, 204, 204));
+        TimeLabel.setText("MM:SS");
+        jPanel1.add(TimeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
+
+        libro1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(libro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 170, 190));
 
         jTextPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextPane1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextPane1.setForeground(new java.awt.Color(0, 0, 0));
         jTextPane1.setText("La historia de Kvothe comienza en los años de \nsu infancia como miembro de una familia de artistas itinerantes, \nlos Edena Ruh, formada por músicos, actores, acróbatas y \njuglares. En este ambiente crece convirtiéndose en un niño \nprodigio para la música y los cuentos, alegre \ny diplomático.");
         jScrollPane2.setViewportView(jTextPane1);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 430, 200));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 310, 190));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Interface inicio=new Interface();
-        inicio.setVisible(true);
-        this.dispose();
-        
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btnReserveBookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReserveBookMouseClicked
+
+        TreeMap<String,String> reservados= new TreeMap<>();
+        String book=JTitlespot.getText();
+        String author=Jauthor.getText();
+        reservados.put(book, author);
+        for (Bookinfo a : books) {
+            if (a.getTitle().equals(reservados.get(book)) && a.getAuthor().equals(reservados.values())) {
+                try {
+                    String titulo=a.getTitle();
+                    String autor=a.getAuthor();
+                    String genero=a.getGenre();
+                    String isbn=a.getISBN();
+                    String anno=a.getYear();
+                    String edicion=a.getEdition();
+                    String tema=a.getTopic();
+                    String portada=a.getCover();
+
+                    Bookinfo add=new Bookinfo();
+                    add.setTitle(titulo);
+                    add.setAuthor(autor);
+                    add.setGenre(genero);
+                    add.setISBN(isbn);
+                    add.setYear(anno);
+                    add.setEdition(edicion);
+                    add.setCover(portada);
+                    add.setTopic(tema);
+
+                    SavedBooks.reserved.add(add);
+                    loadData();
+                    Thread hilo=new Thread("ReservedTime");
+                    hilo.start();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "El libro se ha reservado durante dos semanas");
+                }
+            }
+        }
+    }//GEN-LAST:event_btnReserveBookMouseClicked
+
+    private void JauthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JauthorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JauthorActionPerformed
+
+    private void JTitlespotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTitlespotActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTitlespotActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,11 +228,13 @@ public class BookInformation1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JTitlespot;
     private javax.swing.JTextField Jauthor;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel TimeLabel;
+    private javax.swing.JPanel btnReserveBook;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JLabel libro1;
     // End of variables declaration//GEN-END:variables
 }
