@@ -289,11 +289,18 @@ public class Registro extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(this, "Usuario Creado");
         
+                        
+        String asunto = "Registro completado";
+        String cuerpo = "Se ha registrado correctamente con el usuario: " + usuario + " con el rol de: " + rol;
         
         EnviarCorreo e = new EnviarCorreo();
 
-        
-        e.enviarMensaje(txtCorreo.getText());
+        try {
+            
+            e.enviarMensaje(correo, asunto, cuerpo);
+        } catch (MessagingException | UnsupportedEncodingException ex) {
+            Logger.getLogger(Registro.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         Login v = new Login();
         v.setVisible(true);

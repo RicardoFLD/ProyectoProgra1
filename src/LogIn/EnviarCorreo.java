@@ -13,7 +13,7 @@ import javax.mail.internet.InternetAddress;
 
 public class EnviarCorreo {
     
-    static final String FROM = "Inventario de libros";
+    static final String FROM = "Inventario_de_libros@gmail.com";
     static final String FROMNAME = "BilyBily";
     
     static final String SMTP_USERNAME = "ricardo.fallas.l@gmail.com";
@@ -28,9 +28,7 @@ public class EnviarCorreo {
     
     public void enviarMensaje(String Destinatario, String Asunto, String Cuerpo) throws MessagingException, UnsupportedEncodingException{
         
-                
-        Asunto = "Registro completado";
-        Cuerpo = "Se ha registrado correctamente";
+
         Properties props = System.getProperties();
         props.put("mail.transport.protocol" , "smtp");
         props.put("mail.smtp.port" , PORT);
