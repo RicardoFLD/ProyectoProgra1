@@ -28,9 +28,7 @@ public class EnviarCorreo {
     
     public void enviarMensaje(String Destinatario, String Asunto, String Cuerpo) throws MessagingException, UnsupportedEncodingException{
         
-                
-        Asunto = "Registro completado";
-        Cuerpo = "Se ha registrado correctamente";
+
         Properties props = System.getProperties();
         props.put("mail.transport.protocol" , "smtp");
         props.put("mail.smtp.port" , PORT);
