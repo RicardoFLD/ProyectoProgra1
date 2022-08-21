@@ -293,7 +293,7 @@ public class Registro extends javax.swing.JFrame {
         EnviarCorreo e = new EnviarCorreo();
 
         
-        e.enviarMensaje(txtCorreo.getText());
+        e.enviarMensaje(correo);
         
         Login v = new Login();
         v.setVisible(true);
