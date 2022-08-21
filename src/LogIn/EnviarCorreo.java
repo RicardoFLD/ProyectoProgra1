@@ -13,7 +13,7 @@ import javax.mail.internet.InternetAddress;
 
 public class EnviarCorreo {
     
-    static final String FROM = "Inventario de libros";
+    static final String FROM = "Inventario_de_libros@gmail.com";
     static final String FROMNAME = "BilyBily";
     
     static final String SMTP_USERNAME = "ricardo.fallas.l@gmail.com";
