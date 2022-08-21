@@ -94,6 +94,10 @@ public class Bookinfo {
     static String languaje;
     static String cover;
     static String Sinopsis;
+
+    public Object getStatus() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
     
