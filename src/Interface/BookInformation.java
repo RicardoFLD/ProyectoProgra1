@@ -47,11 +47,11 @@ public class BookInformation extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnReserveBook = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        Jauthor = new javax.swing.JTextField();
         JTitlespot = new javax.swing.JTextField();
         TimeLabel = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
+        Jauthor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,7 +61,7 @@ public class BookInformation extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Corbel", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Sinopsis:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         btnReserveBook.setBackground(new java.awt.Color(102, 153, 255));
         btnReserveBook.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -93,18 +93,6 @@ public class BookInformation extends javax.swing.JFrame {
 
         jPanel1.add(btnReserveBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 110, 30));
 
-        Jauthor.setBackground(new java.awt.Color(255, 255, 255));
-        Jauthor.setFont(new java.awt.Font("Corbel Light", 0, 12)); // NOI18N
-        Jauthor.setForeground(new java.awt.Color(102, 102, 102));
-        Jauthor.setText("Autor");
-        Jauthor.setBorder(null);
-        Jauthor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JauthorActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Jauthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 150, 20));
-
         JTitlespot.setBackground(new java.awt.Color(255, 255, 255));
         JTitlespot.setFont(new java.awt.Font("Corbel Light", 1, 18)); // NOI18N
         JTitlespot.setForeground(new java.awt.Color(51, 51, 51));
@@ -123,9 +111,22 @@ public class BookInformation extends javax.swing.JFrame {
 
         jTextPane1.setBackground(new java.awt.Color(255, 255, 255));
         jTextPane1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextPane1.setText("La historia de Kvothe comienza en los años de \nsu infancia como miembro de una familia de artistas itinerantes, \nlos Edena Ruh, formada por músicos, actores, acróbatas y \njuglares. En este ambiente crece convirtiéndose en un niño \nprodigio para la música y los cuentos, alegre \ny diplomático.");
         jScrollPane2.setViewportView(jTextPane1);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 310, 190));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 470, 190));
+
+        Jauthor.setBackground(new java.awt.Color(255, 255, 255));
+        Jauthor.setFont(new java.awt.Font("Corbel Light", 0, 12)); // NOI18N
+        Jauthor.setForeground(new java.awt.Color(102, 102, 102));
+        Jauthor.setText("Patrick Rothfuss");
+        Jauthor.setBorder(null);
+        Jauthor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JauthorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Jauthor, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 150, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
