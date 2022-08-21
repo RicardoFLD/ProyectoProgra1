@@ -1037,21 +1037,21 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_GoToInventoryMenuMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        BookInformation1 info1=new BookInformation1();
+        BookInformation info1=new BookInformation();
         info1.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         BookInformation2 info2=new BookInformation2();
         info2.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         BookInformation3 info3=new BookInformation3();
         info3.setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
