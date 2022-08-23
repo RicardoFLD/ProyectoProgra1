@@ -65,6 +65,24 @@ public class Interface extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(libro13, "src/Images/frankestein.png");
         rsscalelabel.RSScaleLabel.setScaleLabel(libro20, "src/Images/divina comedia.png");
         
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro34, "src/Images/el nombre del viento.jpg");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro17, "src/Images/el nombre del viento.jpg");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro18, "src/Images/antologia.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro19, "src/Images/bazar.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro21, "src/Images/cementerio.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro22, "src/Images/invasion.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro23, "src/Images/puerta.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro24, "src/Images/siemprecambia.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro25, "src/Images/condenados.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro26, "src/Images/libroalmas.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro27, "src/Images/cthulhu.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro28, "src/Images/doctor.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro29, "src/Images/El principito.jpg");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro30, "src/Images/Harry Potter.jpg");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro31, "src/Images/Moby Dick.jpg");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro32, "src/Images/frankestein.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro33, "src/Images/divina comedia.png");
+        rsscalelabel.RSScaleLabel.setScaleLabel(libro35, "src/Images/Moby Dick.jpg");
         /*if (IniciarUsuario.rolUsuario.equals("Administrador")) {
             AdministratorMenu.setVisible(true);
         }else{
@@ -173,6 +191,8 @@ public class Interface extends javax.swing.JFrame {
         jPanel13 = new javax.swing.JPanel();
         libro34 = new javax.swing.JLabel();
         javax.swing.JButton jButton33 = new javax.swing.JButton();
+        libro35 = new javax.swing.JLabel();
+        javax.swing.JButton jButton34 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         OptionMenu = new javax.swing.JMenu();
         AboutMenu = new javax.swing.JMenu();
@@ -867,26 +887,43 @@ public class Interface extends javax.swing.JFrame {
         libro34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jButton33.setText("Descripcion");
+        jButton33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton33ActionPerformed(evt);
+            }
+        });
+
+        libro35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jButton34.setText("Descripcion");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+            .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(libro34, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))
-                .addGap(1092, 1092, 1092))
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton33, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(libro34, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(libro35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton34, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
+                .addGap(978, 978, 978))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(libro34, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton33)
-                .addContainerGap(345, Short.MAX_VALUE))
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(libro35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(libro34, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton33)
+                    .addComponent(jButton34))
+                .addContainerGap(339, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -1150,12 +1187,18 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton29ActionPerformed
 
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
-        // TODO add your handling code here:
+        BookInformation14 info14= new BookInformation14();
+        info14.setVisible(true);
     }//GEN-LAST:event_jButton30ActionPerformed
 
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton31ActionPerformed
+
+    private void jButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton33ActionPerformed
+        BookInformation1 info1=new BookInformation1();
+        info1.setVisible(true);
+    }//GEN-LAST:event_jButton33ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1277,6 +1320,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel libro32;
     private javax.swing.JLabel libro33;
     private javax.swing.JLabel libro34;
+    private javax.swing.JLabel libro35;
     private javax.swing.JLabel libro4;
     private javax.swing.JLabel libro5;
     private javax.swing.JLabel libro6;
