@@ -29,7 +29,7 @@ public class BookInformation extends javax.swing.JFrame {
         t= new timer(5,0,TimeLabel);
         t.start();
         if (TimeLabel.equals("0:0")) {
-            this.dispose();
+            this.dispose();          
         }
     }
     
